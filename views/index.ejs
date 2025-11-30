@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+
+        <div class="form-container" id="form-container">
+            <!-- Registration Form -->
+            <form id="registration-form" action="/register" method="POST">
+                <h2>User Registration Form</h2>
+
+                <label><b>Name :</b></label>
+                <input type="text" name="name" placeholder="Enter Your Name" required>
+
+                <label><b>Email :</b></label>
+                <input type="email" name="email" placeholder="Enter Your Email" required>
+
+                <label><b>Age :</b></label>
+                <input type="number" name="age" placeholder="Enter Your Age" required>
+
+                <label><b> Select Gender :</b></label>
+                <select name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+                <button type="submit">Register</button>
+
+                <span class="toggle-link" onclick="toggleForms()">Already have an account? Login</span>
+            </form>
+
+            <!-- Login Form -->
+            <form id="login-form" action="/login" method="POST" style="display:none;">
+                <h2><b>Login Form</b></h2>
+
+                <label><b>Email :</b></label>
+                <input type="email" name="email" placeholder="Enter Your Email" required>
+                
+                <label><b>Password :</b></label>
+                <input type="password" name="password" placeholder="Enter Your Password" required>
+                <button type="submit">Login</button>
+
+                <span class="toggle-link" onclick="toggleForms()">Don't have an account? Register</span>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleForms() {
+            const regForm = document.getElementById('registration-form');
+            const loginForm = document.getElementById('login-form');
+
+            if (regForm.style.display === 'none') {
+                regForm.style.display = 'block';
+                loginForm.style.display = 'none';
+            } else {
+                regForm.style.display = 'none';
+                loginForm.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
