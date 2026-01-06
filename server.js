@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-
 const app = express();
 
 // Middleware
@@ -52,10 +51,7 @@ app.post("/login", async (req, res) => {
     }
 });
 
-
-// ----------------------
 // CRUD Routes
-// ----------------------
 
 // READ – display users
 app.get("/users", async (req, res) => {
